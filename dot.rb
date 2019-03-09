@@ -1,10 +1,8 @@
 #!/usr/bin/ruby
-
 require 'optparse'
-require './homebrew/homebrew.rb'
+require './plugins.rb'
 
 options = {}
-plugins = [HomebrewInstaller.new]
 
 OptionParser.new { |option|
     option.on("--undo", "-u") { options[:undo] = true }
@@ -12,16 +10,16 @@ OptionParser.new { |option|
 
 class Array
     def run
-    	self.select { |plugin| plugin.should_run }.each {|plugin| plugin.run}
+        self.select { |plugin| plugin.should_run }.each {|plugin| plugin.run}
     end
 
     def undo
-	self.reverse.each { |plugin| plugin.undo}
+        self.reverse.each { |plugin| plugin.undo}
     end
 end
 
 if options[:undo]
-    plugins.undo
+    $plugins.undo
 else
-    plugins.run
+    $plugins.run
 end

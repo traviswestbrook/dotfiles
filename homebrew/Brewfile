@@ -1,0 +1,6 @@
+# specify a directory to install
+cask_args appdir: '/Applications'
+
+#Development
+cask 'visual-studio-code'
+

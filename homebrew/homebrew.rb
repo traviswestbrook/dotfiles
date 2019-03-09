@@ -13,3 +13,16 @@ class HomebrewInstaller
        system('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"')
    end
 end
+
+class Homebrew
+    def run
+        `brew bundle --file="~/.dotfiles/homebrew/Brewfile"`
+    end
+
+    def should_run
+        true
+    end
+    
+    def undo
+    end
+end
