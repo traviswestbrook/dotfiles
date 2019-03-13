@@ -1,25 +1,16 @@
 #!/usr/bin/ruby
-require 'optparse'
 require './plugins.rb'
+require './options.rb'
+require './plugin_extensions.rb'
 
-options = {}
+plugins = $dot_plugins
 
-OptionParser.new { |option|
-    option.on("--undo", "-u") { options[:undo] = true }
-}.parse!
-
-class Array
-    def run
-        self.select { |plugin| plugin.should_run }.each {|plugin| plugin.run}
-    end
-
-    def undo
-        self.reverse.each { |plugin| plugin.undo}
-    end
+if $options[:name]
+    plugins = plugins.select { |plugin| plugin.class.name.include?($options[:name]) }
 end
 
-if options[:undo]
-    $plugins.undo
+if $options[:undo]
+    plugins.undo
 else
-    $plugins.run
+    plugins.filter.run
 end

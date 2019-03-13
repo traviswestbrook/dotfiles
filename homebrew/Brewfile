@@ -3,4 +3,7 @@ cask_args appdir: '/Applications'
 
 #Development
 cask 'visual-studio-code'
+brew 'carthage'
 
+#Browser
+cask 'google-chrome'
