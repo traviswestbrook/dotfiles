@@ -16,7 +16,7 @@ end
 
 class Homebrew
     def run
-        `brew bundle --file="~/.dotfiles/homebrew/Brewfile"`
+        system('brew bundle --file="~/.dotfiles/homebrew/Brewfile"')
     end
 
     def should_run
