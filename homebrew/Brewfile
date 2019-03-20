@@ -4,6 +4,11 @@ cask_args appdir: '/Applications'
 #Development
 cask 'visual-studio-code'
 brew 'carthage'
+cask 'android-studio'
+cask 'iterm2'
+# Powerlevel 9k font
+tap 'homebrew/cask-fonts'
+cask 'font-inconsolata-for-powerline'
 
 #Browser
 cask 'google-chrome'

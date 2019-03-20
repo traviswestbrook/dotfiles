@@ -5,6 +5,7 @@ require './macos/defaults.rb'
 require './macos/touchid.rb'
 require './vscode/vscode.rb'
 require './zsh/zsh.rb'
+require './git/git.rb'
 
 $dot_plugins = [
     HomebrewInstaller.new, 
@@ -13,7 +14,11 @@ $dot_plugins = [
     MacOsxDefaults.new,
     XCodeKeyBindings.new,
     VsCodeExtensions.new,
-    EnableZsh.new
+    EnableZsh.new,
+    EnableOhMyZsh.new,
+    CopyZshrc.new,
+    Powerlevel9kInstaller.new,
+    GitConfigs.new,
 ]
 
 $bootstrap_plugins = [
