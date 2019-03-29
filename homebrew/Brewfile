@@ -6,6 +6,8 @@ cask 'visual-studio-code'
 brew 'carthage'
 cask 'android-studio'
 cask 'iterm2'
+tap 'blender/tap' 'https://github.com/blender/homebrew-tap.git'
+brew 'blender/homebrew-tap/rome'
 # Powerlevel 9k font
 tap 'homebrew/cask-fonts'
 cask 'font-inconsolata-for-powerline'

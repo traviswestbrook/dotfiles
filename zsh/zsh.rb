@@ -50,6 +50,7 @@ end
 class CopyZshrc
     def run
         `cp ~/.dotfiles/zsh/.zshrc ~/.zshrc`
+        `cp -r ~/.dotfiles/zsh/custom/ ~/.oh-my-zsh/custom/`
     end
 
     def should_run

@@ -2,7 +2,10 @@
 
 class Array
     def run
-        self.each {|plugin| plugin.run}
+        self.each {|plugin| 
+            puts plugin
+            plugin.run
+        }
     end
 
     def undo

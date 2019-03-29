@@ -6,6 +6,7 @@ require './macos/touchid.rb'
 require './vscode/vscode.rb'
 require './zsh/zsh.rb'
 require './git/git.rb'
+require './bin_setup/bin.rb'
 
 $dot_plugins = [
     HomebrewInstaller.new, 
@@ -19,6 +20,7 @@ $dot_plugins = [
     CopyZshrc.new,
     Powerlevel9kInstaller.new,
     GitConfigs.new,
+    BinInstaller.new,
 ]
 
 $bootstrap_plugins = [
