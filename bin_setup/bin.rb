@@ -10,11 +10,11 @@ class BinInstaller
         return true
     end
 
-   def undo
-   bin_dotfiles.map {|filePath| filePath.split('/').last }
-        .each { |file|
-            `rm /usr/local/bin/#{file}`
-        }
+    def undo
+        bin_dotfiles.map {|filePath| filePath.split('/').last }
+            .each { |file|
+                `rm /usr/local/bin/#{file}`
+            }
    end
 end
 
