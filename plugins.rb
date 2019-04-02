@@ -9,20 +9,20 @@ require './git/git.rb'
 require './bin_setup/bin.rb'
 
 $dot_plugins = [
-    HomebrewInstaller.new, 
-    Homebrew.new,
-    XCodeInstaller.new,
     MacOsxDefaults.new,
     XCodeKeyBindings.new,
     VsCodeExtensions.new,
-    EnableZsh.new,
-    EnableOhMyZsh.new,
     CopyZshrc.new,
-    Powerlevel9kInstaller.new,
     GitConfigs.new,
     BinInstaller.new,
 ]
 
 $bootstrap_plugins = [
-    TouchIdLauncher.new
+    TouchIdLauncher.new,
+    HomebrewInstaller.new, 
+    Homebrew.new,
+    XCodeInstaller.new,
+    EnableZsh.new,
+    EnableOhMyZsh.new,
+    Powerlevel9kInstaller.new,
 ]
