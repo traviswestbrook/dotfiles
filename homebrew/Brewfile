@@ -11,6 +11,8 @@ brew 'blender/homebrew-tap/rome'
 # Powerlevel 9k font
 tap 'homebrew/cask-fonts'
 cask 'font-inconsolata-for-powerline'
+tap 'caskroom/versions'
+cask 'java8'
 
 #Browser
 cask 'google-chrome'

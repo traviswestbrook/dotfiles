@@ -15,6 +15,7 @@ $dot_plugins = [
     CopyZshrc.new,
     GitConfigs.new,
     BinInstaller.new,
+    Homebrew.new,
 ]
 
 $bootstrap_plugins = [
