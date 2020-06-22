@@ -1,2 +1,4 @@
 .DS_Store
 directories.zsh
+config/user.yml
+build

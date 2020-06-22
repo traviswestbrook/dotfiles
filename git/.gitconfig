@@ -1,0 +1,6 @@
+[pager]
+	branch = false
+
+[alias]
+    co = checkout
+    la = "!git config -l | grep alias | cut -c 7-"

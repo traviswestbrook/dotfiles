@@ -6,13 +6,18 @@ cask 'visual-studio-code'
 brew 'carthage'
 cask 'android-studio'
 cask 'iterm2'
-tap 'blender/tap' 'https://github.com/blender/homebrew-tap.git'
-brew 'blender/homebrew-tap/rome'
+cask 'docker'
+
 # Powerlevel 9k font
 tap 'homebrew/cask-fonts'
 cask 'font-inconsolata-for-powerline'
-tap 'caskroom/versions'
-cask 'java8'
 
 #Browser
 cask 'google-chrome'
+
+# Utilities
+cask "alfred"
+cask "istat-menus"
+
+#Entertainment
+cask "spotify"

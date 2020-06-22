@@ -2,7 +2,7 @@
 
 class HomebrewInstaller
     def run
-        system('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"')
+        system('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"')
     end
 
     def should_run
@@ -10,7 +10,7 @@ class HomebrewInstaller
     end
 
    def undo
-       system('/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall)"')
+       system('/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/uninstall.sh)"')
    end
 end
 

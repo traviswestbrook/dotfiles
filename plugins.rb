@@ -2,7 +2,6 @@
 require './homebrew/homebrew.rb'
 require './xcode/xcode.rb'
 require './macos/defaults.rb'
-require './macos/touchid.rb'
 require './vscode/vscode.rb'
 require './zsh/zsh.rb'
 require './git/git.rb'
@@ -19,8 +18,7 @@ $dot_plugins = [
 ]
 
 $bootstrap_plugins = [
-    TouchIdLauncher.new,
-    HomebrewInstaller.new, 
+    HomebrewInstaller.new,
     Homebrew.new,
     XCodeInstaller.new,
     EnableZsh.new,

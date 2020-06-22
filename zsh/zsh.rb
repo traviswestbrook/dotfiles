@@ -1,5 +1,8 @@
 #!/usr/bin/ruby
 
+require './util/copy.rb'
+require './util/directory.rb'
+
 def oh_my_zsh_dir
     File.expand_path('~/.oh-my-zsh')
 end
@@ -35,7 +38,7 @@ end
 
 class Powerlevel9kInstaller
     def run
-        ` git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k`
+        `git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k`
     end
 
     def should_run
@@ -48,16 +51,25 @@ class Powerlevel9kInstaller
 end
 
 class CopyZshrc
+
+    def initialize
+        zshrc = Copy.new("#{dot_directory()}/zsh/.zshrc", '~/.zshrc')
+
+        @copies = [
+            zshrc,
+        ]
+    end
+
     def run
-        `cp ~/.dotfiles/zsh/.zshrc ~/.zshrc`
-        `cp -r ~/.dotfiles/zsh/custom/ ~/.oh-my-zsh/custom/`
+        @copies.each { |copy| copy.run}
+        "cp -r #{dot_directory()}/zsh/custom/ ~/.oh-my-zsh/custom/"
     end
 
     def should_run
-        return true
+        true
     end
-
+    
     def undo
-        `cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc`
+        @copies.each { |copy| copy.undo}
     end
 end

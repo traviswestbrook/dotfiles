@@ -6,7 +6,7 @@ require './plugin_extensions.rb'
 if $options[:undo]
     $bootstrap_plugins.undo
 else
-    $bootstrap_plugins.run
+    $bootstrap_plugins.filter.run
 end
 
 require './dot.rb'
